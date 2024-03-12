@@ -1,4 +1,4 @@
-// Claudio Souza Nunes
+// Pedro Henrique Garcia Affonso
 
 #include <iostream>
 using namespace std;
@@ -14,9 +14,10 @@ void buscarElemento();
 
 
 const int MAX = 5;
-int lista[MAX]{};
+int lista[MAX] = {};
 int nElementos = 0;
-
+int busca;
+int pos;
 
 int main()
 {
@@ -27,7 +28,7 @@ void menu()
 {
 	int op = 0;
 	while (op != 6) {
-		system("cls"); // somente no windows
+		//system("cls"); // somente no windows
 		cout << "Menu Lista Linear";
 		cout << endl << endl;
 		cout << "1 - Inicializar Lista \n";
@@ -58,7 +59,7 @@ void menu()
 			break;
 		}
 
-		system("pause"); // somente no windows
+		//system("pause"); // somente no windows
 	}
 }
 
@@ -97,7 +98,7 @@ void inserirElemento()
 		nElementos++;
 	}
 	else {
-		cout << "Lista cheia";
+		cout << "Lista cheia" << endl;
 	}
 
 }
@@ -105,5 +106,21 @@ void inserirElemento()
 // deve ser implementada como resposta ao exercicio
 void buscarElemento()
 {
+	pos =-1;
 
+	cout << "Digite a busca: ";
+	cin >> busca;
+
+	for (int n = 0; n < MAX; n++) {
+		if (busca == lista[n]){
+			pos = n;
+			}
+	}
+	
+	if (pos != -1){
+		cout << "Elemento encontrado na posicao: " << pos << endl;
+	}
+	else {
+		cout << "Elemento nao encontrado." << endl;
+	}
 }
